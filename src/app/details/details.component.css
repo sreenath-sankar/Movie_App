@@ -1,0 +1,15 @@
+article{
+    margin-top: 4rem;
+    padding-top: 10rem;
+    padding-left: 5rem;
+}
+section{
+    background: black;
+}
+article h2,p{
+    color: white;
+    text-align: center;
+}
+img{
+    padding-top: 4.5rem;
+}
