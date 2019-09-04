@@ -1,0 +1,14 @@
+#space{
+    padding-left: 10rem;
+}
+header{
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    background: black;
+    color: white;
+    height: 10rem;
+}
+.card{
+    background: black;
+    color: white;
+}

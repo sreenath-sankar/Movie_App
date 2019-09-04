@@ -1,19 +1,22 @@
-<div class="search-bg">
-  <form>
-    <input class="form-control" type="text" placeholder="Search">
-  </form>
+<div class="swrap form-inline">
+  <input class="form-control form-control-sm ml-5 w-75" type="text" placeholder="Matrix, Titanic...."
+    aria-label="Search" #myQuery >
+  <button (click)="logSearch(myQuery.value)" type="submit" class="btn btn-success">
+  <i class="fas fa-search" aria-hidden="true"></i>
+  </button>
 </div>
 
+<body>
 <ul class="row list-unstyled">
   <li *ngFor="let movie of movies.results;" class="col-lg-3 mt-4">
     <div class="card">
       <img class="card-img-top" src="https://image.tmdb.org/t/p/w342/{{ movie.poster_path }}" alt="{{ movie.title }}">
       <div class="card-body">
-        <h2 class="h5 card-title">{{ movie.title }} ({{ movie.release_date|date:'MMM y' }})</h2>
-        <p class="card-text">{{ movie.overview|slice:0:120 }}...</p>
-        <a [routerLink]="['/details', movie.id]" class="btn btn-info">Details</a>
+        <h2 class="h5 card-title" style="color: white">{{ movie.title }} ({{ movie.release_date|date:'y' }})</h2>
+        <a [routerLink]="['/details', movie.id]" class="btn btn-success">Details</a>
       </div>
     </div>
   </li>
 </ul>
+</body>
 

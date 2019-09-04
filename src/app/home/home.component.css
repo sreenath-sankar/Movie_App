@@ -1,9 +1,22 @@
 ul{
-    margin: 3rem;
-    margin-top: 5rem;
+
+    margin-top: 1rem;
+    margin-left:  3rem;
+    margin-right:  3rem;
 }
-.search-bg{
-    margin-top: 10rem;
-    padding-top: 10rem;
+body,.card{
     background: black;
+}
+.card-body{
+    text-align: center;
+}
+h2{
+    color: solid white;
+}
+button{
+    margin-left: 5rem;
+    text-decoration: none;
+}
+.swrap{
+    margin-top: 6rem;
 }

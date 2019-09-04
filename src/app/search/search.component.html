@@ -1,1 +1,14 @@
-<p>search works!</p>
+<br><br>
+<body class="container">
+  <ul class="row list-unstyled">
+    <li *ngFor="let movie of movie.results;" class="col-lg-3 mt-4">
+      <div class="card">
+        <img class="card-img-top" src="https://image.tmdb.org/t/p/w342/{{ movie.poster_path }}" alt="{{ movie.title }}">
+        <div class="card-body">
+          <h2 class="h5 card-title">{{ movie.title }}({{ movie.release_date|date:'y' }})</h2>
+          <a [routerLink]="['/details', movie.id]" class="btn btn-success">Details</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</body>

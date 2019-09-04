@@ -21,7 +21,14 @@ export class MovieService {
     let moviesUrl = `${this.url}${movie_id}?api_key=${this.apiKey}&language=${'en-US'}`;
     return this.http.get(moviesUrl);
   }
-  getSearch(): any {
-    let moviesUrl = `https://api.themoviedb.org/3/search/company?api_key=${this.apiKey}&page=1`
+
+  getSearch(query): any {
+    let moviesUrl = `https://api.themoviedb.org/3/search/movie?include_adult=false&page=1&language=en-US&api_key=${this.apiKey}&query=${query}`
+    return this.http.get(moviesUrl);
+  }
+
+  checkFav(movieId) {
+    let favurl = `http://localhost:3004/favourites/${movieId}`;
+    return this.http.get(favurl);
   }
 }

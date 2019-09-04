@@ -1,11 +1,21 @@
-<section>
+<body>
+<section class="container">
     <div class="row">
       <div class="col-lg-6">
         <article>
           <h2>{{movie.original_title}}</h2>
-        </article>
+          <span><em>Rating: {{movie.vote_average}}/10</em></span><br><br>
+          <div class="details">Genre: {{movie.genres[0].name}}<br>
+            Production: {{movie.production_companies[0].name}}<br>
+            Release Date: {{movie.release_date}}<br>
+            Run Time:  {{movie.runtime}} min<br>
+            <div *ngIf="flag; then Fav else notFav"></div>
+            <ng-template #notFav><button  (click)="addFav()" type="button" class="btn btn-outline-info"><i class="far fa-bookmark fa-2x float-left"></i>Add to Favorites</button></ng-template>
+            <ng-template #Fav><button type="button" class="btn btn-outline-success"><i class="far fa-bookmark fa-2x float-left"></i>Added to Favourites</button></ng-template>
+          </div>
+        </article><br>
         <p>
-            {{movie.overview}}
+          <strong style="font-size: 1.25rem">Overview:</strong> {{movie.overview}}
         </p>
       </div>
       <div class="col-lg-6">
@@ -13,3 +23,5 @@
       </div>
     </div>
 </section>
+</body>
+
